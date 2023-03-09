@@ -14,7 +14,6 @@
     "nodemon": "^2.0.21"
   },
   "devDependencies": {
-    "morgan": "^1.10.0",
     "socket.io": "^4.6.1"
   }
 }
