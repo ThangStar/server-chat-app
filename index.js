@@ -1,13 +1,13 @@
 const { Socket } = require('dgram')
 const express = require('express')
 const app = express()
-const morgan = require('morgan')
+// const morgan = require('morgan')
 const port = 3000
 const server = require('http').createServer(app)
 const { Server } = require("socket.io") ;
 const io = new Server(server);
 
-app.use(morgan('combined'))
+// app.use(morgan('combined'))
 // app.use(express.json())
 
 // io.listen(port)
