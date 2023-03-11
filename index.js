@@ -4,20 +4,27 @@ const app = express()
 const morgan = require('morgan')
 const port = 3000
 const server = require('http').createServer(app)
-const { Server } = require("socket.io");
+const { Server } = require("socket.io") ;
 const io = new Server(server);
 
 app.use(morgan('combined'))
-app.use(express.json())
+// app.use(express.json())
 
-io.listen(3000)
+// io.listen(port)
+app.get('/', (req, res) => {
+     res.send('Hello World!')
+})
+
+app.listen(port, () => {
+     console.log(`Example app listening at http://localhost:${port}`)
+})
 
 io.on("connection", socket => {
      const count = io.engine.clientsCount;
      console.log('====================================');
      console.log("Client connect: ", count);
      console.log('====================================');
-     
+
      //send public
      socket.on('message-public', (data) => {
           console.log('data is: ' + data);
@@ -45,3 +52,4 @@ io.on("connection", socket => {
           console.log('====================================');
      });
 })
+
