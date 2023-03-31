@@ -1,0 +1,208 @@
+{{!-- modal edit --}}
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog">
+          <div class="modal-content">
+               <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Thông tin người dùng</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                    <form enctype="multipart/form-data" action="/upload-avatar" method="post">
+                         <div class="mb-3">
+                              <label for="recipient-name" class="col-form-label">Địa chỉ email</label>
+                              <input type="text" name="email" class="form-control" id="recipient-name">
+                         </div>
+                         <div class="mb-3">
+                              <label for="message-text" class="col-form-label">Tên tài khoản</label>
+                              <input type="text" name="fullname" class="form-control" id="recipient-name">
+                         </div>
+                         <div class="mb-3">
+                              <label for="message-text" class="col-form-label">Hình đại diện</label>
+                              <br>
+                              <input type="file" name="avatar" multiple>
+                         </div>
+                         <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                              <button type="submit" class="btn btn-primary">Cập nhật</button>
+                         </div>
+                    </form>
+               </div>
+
+          </div>
+     </div>
+</div>
+     
+{{!-- model add --}}
+<div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+     <div class="modal-dialog">
+          <div class="modal-content">
+               <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel1">Thêm người dùng</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                    <form enctype="multipart/form-data" action="/user/add-user" method="post">
+                         <div class="mb-3">
+                              <label for="recipient-name" class="col-form-label">Địa chỉ email</label>
+                              <input type="text" name="email" class="form-control" id="recipient-name">
+                         </div>
+                         <div class="mb-3">
+                              <label for="message-text" class="col-form-label">Tên tài khoản</label>
+                              <input type="text" name="fullname" class="form-control" id="message-text">
+                         </div>
+                         <div class="mb-3">
+                              <label for="message-text" class="col-form-label">Mật khẩu</label>
+                              <input type="password" name="password" class="form-control" id="recipient-name">
+                         </div>
+                         <label class="col-form-label">
+                              Giới tính
+                         </label>
+                         <div class="form-check">
+                              <input class="form-check-input" value="Nam" type="radio" name="gender"
+                                   id="flexRadioDefault1">
+                              <label class="form-check-label" for="flexRadioDefault1">
+                                   Nam
+                              </label>
+                         </div>
+                         <div class="form-check mb-3">
+                              <input class="form-check-input" value="Nữ" type="radio" name="gender"
+                                   id="flexRadioDefault2" checked>
+                              <label class="form-check-label" for="flexRadioDefault2">
+                                   Nữ
+                              </label>
+                         </div>
+
+                         <div class="mb-3">
+                              <label for="message-text" class="col-form-label">Quyền</label>
+                              <br>
+                              <input type="hidden" id="ipAuth" value="user" name="permission">
+                              <button type="button" id="btnAuth" class="btn btn-primary dropdown-toggle"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                   user
+                              </button>
+                              <ul class="dropdown-menu">
+                                   <li><a class="dropdown-item itemAuth" href="#">user</a></li>
+                                   <li><a class="dropdown-item itemAuth" href="#">admin</a></li>
+                              </ul>
+
+                         </div>
+
+                         <div class="mb-3">
+                              <label for="message-text" class="col-form-label">Hình đại diện</label>
+                              <br>
+                              <input type="file" name="avatar" multiple>
+                         </div>
+                         <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                              <button type="submit" class="btn btn-primary">Thêm</button>
+                         </div>
+                    </form>
+               </div>
+
+          </div>
+     </div>
+</div>
+
+<div class="px-3 bg-body-secondary pb-5 pt-2 mx-auto">
+     <div class="row border dark-100 py-3 my-2 w-100 mx-auto row px-3 d-flex justify-content-between rounded mb-4">
+          <div class="row col-10">
+               <div class="row">
+                    <a href="#" class="btn btn-light btn-lg px-4 containerIcon h-auto w-auto">
+                         <i class="fa-solid fa-cart-shopping iconCart"></i>
+                    </a>
+                    <div class="w-auto">
+                         <h3>Premium</h3>
+                         <p class="m-0">Nâng cấp lên premium để có trải nghiệm tốt hơn</p>
+                    </div>
+               </div>
+          </div>
+          <button type="button" class="col-2 btn fw-bold text-white bg-yellow">Nâng cấp ngay</button>
+     </div>
+
+     <div class="row d-flex justify-content-between">
+
+          <div class="row col-7 mx-auto">
+               <div class="card bg-light w-100 h-100">
+                    <blockquote class="blockquote mb-0 p-0">
+                         <figure class="highcharts-figure w-100 h-100">
+                              <div id="container"></div>
+                         </figure>
+                    </blockquote>
+               </div>
+          </div>
+          <div class="col-5  mx-auto">
+               <div class="row my-1 ">
+                    <div class="col-6">
+                         <div class="bg-info bg-gradient w-100 box rounded py-2">
+                              <div class="w-100 text-center">
+                                   <i
+                                        class="fa-solid fs-5 text-primary bg-white p-3 rounded-circle fa-address-card"></i>
+                              </div>
+                              <p id="countUser" class="textInBox text-center fw-bold fs-3">0</p>
+                              <p class="textInBox text-center fw-bold">Người dùng</p>
+                         </div>
+                    </div>
+                    <div class="col-6">
+                         <div class="bg-primary bg-gradient w-100 box rounded py-2">
+                              <div class="w-100 text-center">
+                                   <i
+                                        class="fa-solid fs-5 text-primary bg-white p-3 rounded-circle fa-address-card"></i>
+                              </div>
+                              <p class="textInBox text-center fw-bold fs-3">82</p>
+                              <p class="textInBox text-center fw-bold">Người dùng</p>
+                         </div>
+                    </div>
+               </div>
+               <div class="row my-1">
+                    <div class="col-6">
+                         <div class="bg-success bg-gradient w-100 box rounded py-2">
+                              <div class="w-100 text-center">
+                                   <i
+                                        class="fa-solid fs-5 text-primary bg-white p-3 rounded-circle fa-address-card"></i>
+                              </div>
+                              <p class="textInBox text-center fw-bold fs-3">82</p>
+                              <p class="textInBox text-center fw-bold">Người dùng</p>
+                         </div>
+                    </div>
+                    <div class="col-6">
+                         <div class="bg-danger bg-gradient w-100 box rounded py-2">
+                              <div class="w-100 text-center">
+                                   <i
+                                        class="fa-solid fs-5 text-primary bg-white p-3 rounded-circle fa-address-card"></i>
+                              </div>
+                              <p class="textInBox text-center fw-bold fs-3">82</p>
+                              <p class="textInBox text-center fw-bold">Người dùng</p>
+                         </div>
+                    </div>
+               </div>
+          </div>
+
+     </div>
+     <div class="col-12 float-end mx-0 px-0 my-0 py-0">
+
+          <button type="button" id="addUser" data-bs-target="#addUser" data-bs-toggle="modal"
+               data-bs-whatever="@getbootstrap" class="btn btn-outline-primary float-end fw-bold">+ Thêm</button>
+     </div>
+     <div class="row border mb-5 mx-auto bg-white rounded">
+
+          <div class="container text-white bg-primary bg-gradient border p-3 rounded">
+               <h3>Danh sách user</h3>
+          </div>
+          <table class="table table-borderless rounded">
+               <thead>
+                    <tr>
+                         <th class="tablePadding" scope="col">#</th>
+                         <th scope="col">Avatar</th>
+                         <th scope="col">Tên tài khoản</th>
+                         <th scope="col">Email</th>
+                         <th scope="col">Quyền</th>
+                         <th scope="col">Chức năng</th>
+                    </tr>
+               </thead>
+               <tbody class="table-group-divider">
+
+               </tbody>
+          </table>
+
+     </div>
+</div>

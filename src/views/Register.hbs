@@ -1,0 +1,92 @@
+<div class="row mx-5 my-4">
+     <div class="col-4">
+          <div class="bg-primary bg-gradient w-100 h-100 px-4 py-5">
+               <div class=" justify-content-between">
+                    <div>
+                         <p class="text-white">IOChat</p>
+                    </div>
+                    <div class="w-100 my-5">
+                         <h2 class="text-white ">Tham gia cộng đồng cùng chúng mình</h2>
+                         <p class="text-start text-white">Tạo tài khoản ngay thôi nào</p>
+                    </div>
+                    <div class="w-100">
+                         <div class="card border-primary mb-3  " style="max-width: 18rem;background-color: #2520e3;">
+                              <div class="card-body text-white">
+                                   <p class="card-text">Some quick example text to build on the card title and make up
+                                        the
+                                        bulk of the card's content.</p>
+
+                              </div>
+                              {{!-- card --}}
+                              <div class="row g-0 row containerCard px-3">
+                                   <img src="images/image_demo.jpg" class="img-fluid imageCard rounded" alt="...">
+                                   <div class="w-50">
+                                        <div class="card-body text-white ">
+                                             <b class="m-0 font-weight-bold">Timson K</b>
+                                             <small>Last updated 3
+                                                  mins ago</small>
+                                        </div>
+                                   </div>
+                              </div>
+
+                         </div>
+                    </div>
+               </div>
+
+          </div>
+     </div>
+     <div class="col-8">
+          <div class="bg-primary bg-white w-100 px-4 py-5 h-100">
+               <h2 class="">Đăng kí</h2>
+               <p>Tạo tài khoản của bạn</p>
+               <label class="my-2">Gender</label>
+
+
+               <form action="/signup" method="post">
+                    <div class="row mx-auto mb-3 d-flex justify-content-between">
+                         <label class="p-3 widthForm form-control ">
+                              <div class="form-check ">
+                                   <input class="form-check-input" value="Nam" type="radio" name="gender"
+                                        id="flexRadioDefault1 " checked>
+                                   <label class="form-check-label" for="flexRadioDefault1">
+                                        Nam
+                                   </label>
+                              </div>
+                         </label>
+                         <label class="border p-3 pr-5 col-6 widthForm form-control">
+                              <div class="form-check ">
+                                   <input class="form-check-input" value="Nữ" type="radio" name="gender"
+                                        id="flexRadioDefault2 ">
+                                   <label class="form-check-label" for="flexRadioDefault2">
+                                        Nữ
+                                   </label>
+                              </div>
+                         </label>
+                    </div>
+                    <div class="mb-3">
+                         <label for="fullname" class="form-label">Họ và tên</label>
+                         <input type="text" class="form-control" name="fullname" id="fullname">
+                    </div>
+                    <div class="mb-3">
+
+
+                         <label for="exampleInputEmail1" class="form-label">Địa chỉ Email</label>
+                         <input type="email" class="form-control" name="email" id="exampleInputEmail1"
+                              aria-describedby="emailHelp">
+                         <div id="emailHelp" class="form-text">Chúng tôi sẽ không bao giờ chia sẻ email của bạn với bất
+                              kỳ ai khác</div>
+                    </div>
+                    <div class="mb-3">
+                         <label for="exampleInputPassword1" class="form-label">Mật khẩu</label>
+                         <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3 form-check">
+                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                         <label class="form-check-label" for="exampleCheck1">Ghi nhớ đăng nhập</label>
+                    </div>
+                    <button type="submit" class=" px-4 py-2 btn btn-primary">Đăng kí</button>
+               </form>
+          </div>
+
+     </div>
+</div>
