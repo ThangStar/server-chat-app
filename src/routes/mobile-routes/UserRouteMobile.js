@@ -1,5 +1,6 @@
-const CheckLoginRoute = (app, UserController) => {
-     app.post("/check-login", async (req, res) => {
+const UserController = require('../../../controllers/UserController')
+const CheckLogin = (app, UserController) => {
+     app.post("/check-login-mb", async (req, res) => {
           try {
                console.log(req.body);
                const data = {
@@ -27,4 +28,19 @@ const CheckLoginRoute = (app, UserController) => {
      })
 }
 
-module.exports = CheckLoginRoute
+const getUserChatedByIdUser = async (app = express(), userController) => {
+     app.post('/get-user-chated-by-id-mb', async (req, res) => {
+          try {
+               console.log( await req.body);
+               const listMessage = await userController.getManyUserChatedById(req.body._id)
+               res.send(listMessage)
+          } catch (error) {
+               res.send([])
+          }
+     })
+}
+
+
+
+module.exports.checkLogin = CheckLogin
+module.exports.getUserChatedByIdUser = getUserChatedByIdUser

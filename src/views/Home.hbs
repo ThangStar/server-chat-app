@@ -1,26 +1,34 @@
 {{!-- modal edit --}}
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
      <div class="modal-dialog">
           <div class="modal-content">
                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Thông tin người dùng</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Chỉnh sửa thông tin</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                </div>
                <div class="modal-body">
                     <form enctype="multipart/form-data" action="/upload-avatar" method="post">
                          <div class="mb-3">
+                              <img class="imageUser" src="" id="imgUserEdit" alt="">
+                              <label for="message-text" class="col-form-label">Hình đại diện</label>
+                              <br>
+                              <input class="mt-2" type="file" name="avatar" multiple>
+                         </div>
+                         <div class="mb-3">
+                              <label for="user-input" class="col-form-label">ID</label>
+                              <input type="text" class="form-control" id="idUserEdit" disabled>
+                              <input type="text" name="id" class="form-control" id="idUserHidden" hidden>
+
+                         </div>
+                         <div class="mb-3">
                               <label for="recipient-name" class="col-form-label">Địa chỉ email</label>
-                              <input type="text" name="email" class="form-control" id="recipient-name">
+                              <input type="text" name="email" class="form-control" id="emailUserEdit">
                          </div>
                          <div class="mb-3">
                               <label for="message-text" class="col-form-label">Tên tài khoản</label>
-                              <input type="text" name="fullname" class="form-control" id="recipient-name">
+                              <input type="text" name="fullname" class="form-control" id="fullnameUserEdit">
                          </div>
-                         <div class="mb-3">
-                              <label for="message-text" class="col-form-label">Hình đại diện</label>
-                              <br>
-                              <input type="file" name="avatar" multiple>
-                         </div>
+
                          <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
                               <button type="submit" class="btn btn-primary">Cập nhật</button>
@@ -31,8 +39,8 @@
           </div>
      </div>
 </div>
-     
-{{!-- model add --}}
+
+{{!-- modal add --}}
 <div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
      <div class="modal-dialog">
           <div class="modal-content">
@@ -41,7 +49,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                </div>
                <div class="modal-body">
-                    <form enctype="multipart/form-data" action="/user/add-user" method="post">
+                    <form enctype="multipart/form-data" action="/user/add" method="post">
                          <div class="mb-3">
                               <label for="recipient-name" class="col-form-label">Địa chỉ email</label>
                               <input type="text" name="email" class="form-control" id="recipient-name">
@@ -102,6 +110,35 @@
           </div>
      </div>
 </div>
+
+{{!-- modal delete --}}
+<div class="modal fade" id="modalDelete" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+     <div class="modal-dialog">
+          <div class="modal-content">
+               <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="titleDeleteUser">Xóa?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+
+               <div class="modal-body">
+                    <p>Bạn có chắc chắn muốn xóa người này</p>
+                    <form action="/user/delete" method="post">
+                         <div class="mb-3">
+                              <img src="/images/image_default.jpg"
+                                   style="width: 100%; height: 160px; object-fit: contain;" id="imgUserDelete">
+                         </div>
+                         <input hidden type="text" name="id" class="form-control" id="idUserDelete">
+                         <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                              <button type="submit" class="btn btn-danger">Xóa</button>
+                         </div>
+                    </form>
+               </div>
+
+          </div>
+     </div>
+</div>
+
 
 <div class="px-3 bg-body-secondary pb-5 pt-2 mx-auto">
      <div class="row border dark-100 py-3 my-2 w-100 mx-auto row px-3 d-flex justify-content-between rounded mb-4">
@@ -181,7 +218,7 @@
      <div class="col-12 float-end mx-0 px-0 my-0 py-0">
 
           <button type="button" id="addUser" data-bs-target="#addUser" data-bs-toggle="modal"
-               data-bs-whatever="@getbootstrap" class="btn btn-outline-primary float-end fw-bold">+ Thêm</button>
+               data-bs-whatever="@getbootstrap" class="btn btn-success float-end fw-bold">+ Thêm</button>
      </div>
      <div class="row border mb-5 mx-auto bg-white rounded">
 

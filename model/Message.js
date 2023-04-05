@@ -2,9 +2,12 @@ const mongoose = require('mongoose')
 
 
 const message = new mongoose.Schema({
-     idUser: {
+     idUserSend: {
           type: String,
           required: true
+     },
+     idUserGet: {
+          type: String,
      },
      message: {
           type: String,

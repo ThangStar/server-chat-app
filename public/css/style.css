@@ -107,3 +107,14 @@ td {
 .highcharts-data-table tr:hover {
   background: #f1f7ff;
 }
+#profile-detail{
+     position: absolute;
+     right: 0;
+     top: 100%;
+     display: none;
+}
+
+#btn-accordion{
+     outline: 0 !important;
+     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+}

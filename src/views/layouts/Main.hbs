@@ -6,6 +6,7 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Document</title>
+     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
@@ -13,9 +14,9 @@
           crossorigin="anonymous"></script>
      <link rel="stylesheet" href="/css/style.css">
      <script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+     <script src="https://code.highcharts.com/modules/exporting.js"></script>
+     <script src="https://code.highcharts.com/modules/export-data.js"></script>
+     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
      <script src="https://kit.fontawesome.com/1e91bc4594.js" crossorigin="anonymous"></script>
 </head>
@@ -26,22 +27,81 @@
                <a class="navbar-brand" href="#">
                     <img src="/images/logo.jpg" alt="Bootstrap" width="40" height="34">
                </a>
+
+
+
                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
                </button>
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                          <li class="nav-item">
-                              <a class="nav-link active fw-bold fs-4" aria-current="page" href="#">IO Chat</a>
+                              <a class="nav-link active fw-bold fs-4 " aria-current="page" href="#">IO Chat</a>
                          </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                         <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+
+                    <img id="img-profile" class="rounded-circle border border-info p-1" src="/images/image_demo.jpg"
+                         alt="Bootstrap" style="object-fit: cover;" width="40" ; height="40">
+                    <ul class="navbar-nav mb-lg-0">
+                         <li class="nav-item">
+                              <div class="accordion nav-link accordion-flush" id="toggle-profile" aria-current="page"
+                                   id="accordionPanelsStayOpenExample">
+                                   <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                             <button id="btn-accordion" class="text-primary bg-light accordion-button" type="button"
+                                                  data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne"
+                                                  aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                                  no name
+                                             </button>
+                                        </h2>
+                                   </div>
+                              </div>
+                         </li>
+                    </ul>
+
                </div>
+               <div id="profile-detail" class="bg-light px-4 py-4 mt-1 mx-2 rounded">
+                    <img class="mx-auto d-block rounded-circle border border-primary p-1" src="/images/image_demo.jpg"
+                         alt="Bootstrap" style="object-fit: cover; width: 120px; height: 120px;">
+                    <h4 class="mt-2 mb-1 fw-bold text-center">NameUser</h4>
+                    <p class="fs-6 text-muted text-center">fouieho@gmail.com</p>
+
+                    <div class="card" style="width: 18rem;">
+                         <div class="card-header">
+                              <a href="#" class="text-decoration-none
+                                             link-success    
+                                             link-offset-2 
+                                             link-underline 
+                                             link-underline-opacity-0">
+                                   Chỉnh sửa thông tin
+                              </a>
+                         </div>
+                         <ul class="list-group list-group-flush">
+                              <li class="list-group-item">
+                                   <a href="#" class="text-decoration-none
+                                             link-success   
+                                             link-offset-2 
+                                             link-underline 
+                                             link-underline-opacity-0">
+                                        Đổi mật khẩu
+                                   </a>
+                              </li>
+                              <li class="list-group-item">
+                                   <a href="/login" class="text-decoration-none
+                                             link-danger  
+                                             link-offset-2 
+                                             link-underline 
+                                             link-underline-opacity-0">
+                                        Đăng xuất
+                                   </a>
+                              </li>
+                         </ul>
+                    </div>
+
+               </div>
+          </div>
+
           </div>
      </nav>
 
@@ -65,4 +125,5 @@
      </div>
 </body>
 <script src="/js/main.js"></script>
+
 </html>
