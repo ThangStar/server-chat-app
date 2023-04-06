@@ -76,6 +76,7 @@ CheckLoginExpressRoute.ReLoginC(app)
 //mobileRoute
 UserRouteMb.checkLogin(app, UserController)
 UserRouteMb.getUserChatedByIdUser(app, UserController)
+MessageRouteMb.getMessageByUserSendIdAndUserTargetId(app)
 
 //socket IO
 io.listen(3002)
@@ -147,11 +148,11 @@ io.on("connection", async (socket) => {
                await InsertMessage(data, MessageCollection)
 
                //get all message
-               const optionGetMessage = {
-                    target: "public"
-               }
-               const arrMessage = await GetMessage(optionGetMessage)
-               console.log("GET MESSAGE: "+arrMessage);
+               // const optionGetMessage = {
+               //      target: "public"
+               // }
+               // const arrMessage = await GetMessage(optionGetMessage)
+               // console.log("GET MESSAGE: "+arrMessage);
 
                const listMessage = await MessageController.getMessageByUserSendIdAndUserTargetId(data.idUserSend, data.idUserGet)
                console.log('listMessage: ' + listMessage);
